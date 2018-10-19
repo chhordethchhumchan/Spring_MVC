@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- In Config XML file -->
+
 <mapper namespace="com.mcnc.web.dao.CategoryMapper">
     <cache />
-    <resultMap id="baseResultMap" type="com.mcnc.web.model.Category" >
+    <resultMap id="baseResultMap" type="Category" >
         <id column="category_code" property="category_code" jdbcType="VARCHAR" />
         <result column="category_name" property="category_name" jdbcType="VARCHAR" />
         <result column="category_desc" property="category_desc" jdbcType="VARCHAR" />
     </resultMap>
 
+	<insert id="insertCategory" parameterType = "Category" flushCache="true">
+		INSERT INTO bbs_category (category_code, category_name, category_desc)
+	 	VALUES (#{category_code},#{category_name},#{category_desc})
+	</insert>
+	
     <select id="listCatergory" resultMap="baseResultMap">
         select category_code,category_name,category_desc from bbs_category
     </select>
+    
+    <select id = "getCatergoryById" parameterType = "string" resultMap="baseResultMap">
+	   SELECT * FROM bbs_category WHERE category_code = #{id};
+	</select>
+	<update id = "updateById" parameterType = "Category" flushCache="true">
+		update bbs_category set category_name=#{category_name},
+		category_desc=#{category_desc} where category_code=#{category_code}
+	</update>
+	
+	<delete id = "deleteById" parameterType = "string">
+	   DELETE FROM bbs_category WHERE category_code = #{id};
+	</delete>
 </mapper>

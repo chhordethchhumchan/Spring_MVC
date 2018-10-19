@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <form  th:action="@{/category/save}" th:object="${savecategory}" th:method="POST">
+   		<label>Category ID:</label><input type="text" name ="category_code"/><br/>
+   		<label>Category Name:</label><input type="text" name ="category_name"/><br/>
+   		<label>Category Desc:</label><input type="text" name ="category_desc"/><br/>
+   		<input type="submit" value="Save"/><br/>
+   </form>
+   
+   
+
+</body>
+</html>

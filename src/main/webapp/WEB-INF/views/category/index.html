@@ -6,7 +6,7 @@
     <title>Title</title>
 </head>
 <body>
-    <a href="create">New Category</a>
+    <a th:href="@{/category/create}">New Category</a>
     <br>
      <br>
       <br>
@@ -23,15 +23,13 @@
             <td th:text="${category.category_name}"></td>
             <td th:text="${category.category_desc}"></td>
             <td ><a th:href="@{/category/edit(id=${category.category_code})}" >Edit</a></td>
-            <td >
-            <form th:action="@{/category/delete}"  th:method= "DELETE">
-	            <input type="hidden" name="id" th:value="${category.category_code}"/>
-				<input type="submit" value="Delete"/>
-            </form>
-           
-
+            <td>
+	        	<form th:action="@{/category/delete}" th:method="deleteByID">
+		            <input type="hidden" name="id" th:value="${category.category_code}"/>
+					<input type="submit" value="Delete"/>
+	            </form>
+           	</td>
         </tr>
     </table>
-
 </body>
 </html>

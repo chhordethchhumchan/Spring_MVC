@@ -4,16 +4,16 @@ import java.io.Serializable;
 
 public class Category implements Serializable{
 	
-	private String category_code;
+	private String Category_code;
 	private String category_name;
 	private String category_desc;
 	
 	
 	public String getCategory_code() {
-		return category_code;
+		return Category_code;
 	}
 	public void setCategory_code(String category_code) {
-		this.category_code = category_code;
+		this.Category_code = category_code;
 	}
 	public String getCategory_name() {
 		return category_name;
