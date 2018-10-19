@@ -5,18 +5,17 @@
 	<!-- Processes application requests -->
 	
 	<!-- For root context -->
-	<!--  <listener>
+	 <listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>	
-			/WEB-INF/context/db-h2-config.xml
+			/WEB-INF/context/spring_mysql.xml
+			
 		</param-value>
 	</context-param>
-	  -->
-	
-	
+	 
 	<!-- For web context -->
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>

@@ -24,8 +24,6 @@
 			/WEB-INF/resources/admin/,
 			/WEB-INF/views/" />
  
-	<!-- h2 database -->
-		
 
 	<!-- TemplateResolver -->
 		<bean id="templateResolver" class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
