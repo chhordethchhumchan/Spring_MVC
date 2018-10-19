@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="create">New Category</a>
+    <br>
+     <br>
+      <br>
+    <table th:border="1">
+        <tr>
+            <th>ID</th>
+            <th>Category name</th>
+            <th>Category description</th>
+          	<th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each="category : ${categorys}">
+            <td th:text="${category.category_code}"></td>
+            <td th:text="${category.category_name}"></td>
+            <td th:text="${category.category_desc}"></td>
+            <td ><a th:href="@{/category/edit(id=${category.category_code})}" >Edit</a></td>
+            <td >
+            <form th:action="@{/category/delete}"  th:method= "DELETE">
+	            <input type="hidden" name="id" th:value="${category.category_code}"/>
+				<input type="submit" value="Delete"/>
+            </form>
+           
+
+        </tr>
+    </table>
+
+</body>
+</html>

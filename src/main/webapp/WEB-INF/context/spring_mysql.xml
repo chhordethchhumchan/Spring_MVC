@@ -6,10 +6,8 @@
 	http://www.springframework.org/schema/tx 
 	http://www.springframework.org/schema/tx/spring-tx.xsd">
 	
-  
-    <bean id="dataSource"
-        class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-  
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
        <property name="url" value="jdbc:mysql://localhost:3306/mcnc_ojt" />
        <property name="username" value="root" />
@@ -23,7 +21,7 @@
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 	  <property name="dataSource" ref="dataSource" />
-	  <property name="typeAliasesPackage" value="com.web.model"/>
+	  <property name="typeAliasesPackage" value="com.mcnc.web.model"/>
 	  <property name="mapperLocations" value="classpath*:mappers/*.xml" />
 	</bean>
 	
