@@ -21,7 +21,7 @@
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 	  <property name="dataSource" ref="dataSource" />
-	  <property name="typeAliasesPackage" value="com.mcnc.web.model"/>
+	  <property name="typeAliasesPackage" value="com.mcnc.web.dto"/>
 	  <property name="mapperLocations" value="classpath*:mappers/*.xml" />
 	</bean>
 	

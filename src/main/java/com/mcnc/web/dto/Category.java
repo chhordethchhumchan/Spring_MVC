@@ -1,4 +1,4 @@
-package com.mcnc.web.model;
+package com.mcnc.web.dto;
 
 import java.io.Serializable;
 

@@ -24,7 +24,7 @@
             <td th:text="${category.category_desc}"></td>
             <td ><a th:href="@{/category/edit(id=${category.category_code})}" >Edit</a></td>
             <td>
-	        	<form th:action="@{/category/delete}" th:method="deleteByID">
+	        	<form th:action="@{/category/delete}" th:method="DELETE">
 		            <input type="hidden" name="id" th:value="${category.category_code}"/>
 					<input type="submit" value="Delete"/>
 	            </form>

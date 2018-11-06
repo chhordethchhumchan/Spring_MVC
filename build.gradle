@@ -85,6 +85,11 @@ dependencies {
 	//Spring Transaction 
 	  // https://mvnrepository.com/artifact/org.springframework/spring-tx
 	compile group: 'org.springframework', name: 'spring-tx', version: '3.1.1.RELEASE'
+	
+	//Formate Json
+	compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.9.3'
+		
+	
 
 }
 
