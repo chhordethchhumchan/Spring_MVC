@@ -61,7 +61,7 @@ dependencies {
     // Thymeleaf
 	compile group: 'org.thymeleaf', name: 'thymeleaf-spring4', version: '3.0.11.RELEASE'
 	compile group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '2.3.0'
-	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '2.3.0'
+	
 	compile group: 'net.sourceforge.nekohtml', name: 'nekohtml', version: '1.9.22'
     
    
@@ -86,6 +86,13 @@ dependencies {
 	
 	//Formate Json
 	compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.9.3'
+	 
+	// Spring Security
+	compile group: 'org.springframework.security', name: 'mybatis-spring', version: springSecurityVersion
+	compile group: 'org.springframework.security', name: 'spring-security-config', version: springSecurityVersion
+	compile group: 'org.springframework.security', name: 'spring-security-taglibs', version: springSecurityVersion
+	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '3.0.2.RELEASE'
+	compile group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version: '2.0.9.RELEASE'
 		
 
 }

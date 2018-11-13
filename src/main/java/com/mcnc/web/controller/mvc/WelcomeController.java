@@ -13,22 +13,31 @@ public class WelcomeController {
 		ModelAndView model = new ModelAndView();
 		model.addObject("title", "Spring Security Hello World");
 		model.addObject("message", "This is welcome page!");
-		model.setViewName("welcome");
+		model.setViewName("pages/welcome");
 		return model;
 
 	}
 
-	@RequestMapping(value = "/admin**", method = RequestMethod.GET)
+	@RequestMapping(value = "/index**", method = RequestMethod.GET)
 	public ModelAndView adminPage() {
 
 		ModelAndView model = new ModelAndView();
 		model.addObject("title", "Spring Security Hello World");
 		model.addObject("message", "This is protected page!");
-		model.setViewName("admin");
+		model.setViewName("pages/index");
 		return model;
 
 	}
-	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView login() {
+
+		ModelAndView model = new ModelAndView();
+		model.addObject("title", "Spring Security Hello World");
+		model.addObject("message", "This is protected page!");
+		model.setViewName("pages/login");
+		return model;
+
+	}
 
 
 }

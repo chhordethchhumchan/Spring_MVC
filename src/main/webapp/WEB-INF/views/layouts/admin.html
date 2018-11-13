@@ -4,14 +4,12 @@
   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <title>Hello</title>
-<head th:replace="layouts/header :: head">
-
-</head>
+<head th:replace="blocks/link :: link"></head>
 <body class="hold-transition skin-blue sidebar-mini">
  <div class="wrapper">
 	
-<header th:replace="layouts/header :: default"></header>
- <aside class="main-sidebar" th:replace="layouts/header :: main-sidebar">
+<header th:replace="blocks/header :: header"></header>
+ <aside class="main-sidebar" th:replace="blocks/main-sidebar :: main-sidebar">
   </aside>
    <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -39,28 +37,9 @@
       </div>
  
     <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-   <footer class="main-footer" th:replace="layouts/header :: main-footer">
-    
-  </footer>
- <aside class="control-sidebar control-sidebar-dark" th:replace="layouts/header :: control-sidebar"></aside>
-
- 
- </div>
-<!-- ./wrapper -->
-
-<!-- REQUIRED JS SCRIPTS -->
-
-<!-- jQuery 3 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
-
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. -->
+    </div>
+    <div th:replace="blocks/footer :: footer" ></div>
+    <div th:replace="blocks/js :: js"></div>
+  
 </body>
 </html>

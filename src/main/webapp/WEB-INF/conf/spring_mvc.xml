@@ -21,8 +21,10 @@
 	<mvc:resources 
 		mapping="/**" 
 		location="
+			/WEB-INF/resources/**/,
 			/WEB-INF/resources/static/,
 			/WEB-INF/views/,
+			/WEB-INF/views/**/,
 			/WEB-INF/views/layouts" />
  
 
