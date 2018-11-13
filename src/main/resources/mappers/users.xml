@@ -2,16 +2,31 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <!-- In Config XML file -->
 
-<mapper namespace="com.mcnc.web.dao.UserService">
+<mapper namespace="com.mcnc.web.dao.UserDAO">
     <cache />
-    <resultMap id="baseResultMap" type="User" >
+    <resultMap id="baseResultMap" type="UserDTO" >
         <id column="id" property="id" jdbcType="VARCHAR" />
         <result column="name" property="name" jdbcType="VARCHAR" />
     </resultMap>
 
     <select id="findAllUser" resultMap="baseResultMap">
         select id,name from users
-    </select>
-    
-  
+    </select>  
+    <select id="findUserByID" resultMap="baseResultMap">
+        select id,name from users
+        <where>
+        	id = #{id}
+        </where>
+    </select>  
+    <insert id="save" parameterType="UserDTO">
+    	insert into users (id,name) values(#{id},#{name})
+    </insert>
+   	<update id="update" parameterType="UserDTO">
+   		update users set name=#{name} where id=#{id}
+   		
+   	</update> 
+   
+   <delete id="delete" parameterType="UserDTO">
+   		delete from users where id=#{id}
+   </delete>
 </mapper>

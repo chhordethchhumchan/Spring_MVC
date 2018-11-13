@@ -1,16 +1,24 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layouts/default">
 <head>
+<title>PPCB - Maru Admin</title>
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
 
-<title> Dashboard</title>
-<body>
+<th:block layout:fragment="breadcrumb-header">
+		Welcome Page
+     <small>Optional description</small>
+</th:block>
+<th:block layout:fragment="breadcrumb">
+  <li class="breadcrumb-item">Page 1</li>
+</th:block>
+<div layout:fragment="page_content">
+
+ 
+
+  </div>
 	
-	<h2>hello</h2>
-
-</div>
 </body>
 </html>
+

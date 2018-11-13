@@ -4,14 +4,15 @@
 	version="2.5">
 	<!-- Processes application requests -->
 	
-	<!-- For root context -->
+	<!-- For root conf -->
 	 <listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>	
-			/WEB-INF/context/spring_mysql.xml
+			/WEB-INF/conf/spring_mysql.xml
+	
 			
 		</param-value>
 	</context-param>
@@ -22,7 +23,7 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/context/spring_mvc.xml</param-value>
+			<param-value>/WEB-INF/conf/spring_mvc.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>

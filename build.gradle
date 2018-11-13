@@ -59,22 +59,21 @@ dependencies {
 	
     
     // Thymeleaf
-	compile group: 'org.thymeleaf', name: 'thymeleaf-spring4', version: thymeleafVersion
-	compile 'net.sourceforge.nekohtml:nekohtml:1.9.21'
+	compile group: 'org.thymeleaf', name: 'thymeleaf-spring4', version: '3.0.11.RELEASE'
+	compile group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '2.3.0'
+	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '2.3.0'
+	compile group: 'net.sourceforge.nekohtml', name: 'nekohtml', version: '1.9.22'
     
    
-	// https://mvnrepository.com/artifact/org.springframework/spring-context
 	compile group: 'org.springframework', name: 'spring-context', version: '5.1.1.RELEASE'
 	
 	//Spring tool auto restart
 	compile("org.springframework.boot:spring-boot-devtools") 
 
 	// MySql Connector
-	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
 	compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
 
 	// Spring jdbc
-	// https://mvnrepository.com/artifact/org.springframework/spring-jdbc
 	compile group: 'org.springframework', name: 'spring-jdbc', version: '5.1.1.RELEASE'
 	
    	compile group: 'org.springframework', name: 'spring-beans', version: '4.2.2.RELEASE'
@@ -83,13 +82,11 @@ dependencies {
 	compile group: 'org.mybatis', name: 'mybatis-spring', version: mybatisVersion
 	
 	//Spring Transaction 
-	  // https://mvnrepository.com/artifact/org.springframework/spring-tx
 	compile group: 'org.springframework', name: 'spring-tx', version: '3.1.1.RELEASE'
 	
 	//Formate Json
 	compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.9.3'
 		
-	
 
 }
 
