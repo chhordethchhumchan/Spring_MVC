@@ -1,7 +1,7 @@
 <!DOCTYPE html >
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layouts/admin">
 <head>
-<title>PPCB - Maru Admin</title>
+<title  layout:fragment="title">Welcome</title>
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -15,7 +15,48 @@
   <li class="breadcrumb-item">Page 1</li>
 </th:block>
 
-<div layout:fragment="page_content"> </div>
+<div layout:fragment="page_content">
+	<form name ="userForm" method="post">
+		<label>Input id</label>
+		<input type="text" name="id" id="id">
+		<label>Input name</label>
+		<input type="text" name="name" id="name">
+		<button type="submit">Submit</button>
+		
+	</form>
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+$(function() {
+  
+   $('button[type=submit]').click(function(e) {
+	   e.preventDefault();
+	   		var user = {
+	           id: $("#id").val(),
+	           name:$("#name").val(),
+	        
+	       }
+		   var data = JSON.stringify(user);
+		   $.ajax({
+		          data: data,
+		          type: "post",
+		          url: "/spring-mvc-mcnc/api/user/save",
+		          async: false,
+		          contentType: "application/json",
+		          dataType: "json",
+		          success: function(data){
+		               alert("Data Save: ");
+		          }
+		 });
+		   
+	 });
+	   
+	 
+   
+});
+</script>
+ </div>
 </div>
 </body>
 </html>

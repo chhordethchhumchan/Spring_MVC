@@ -85,15 +85,14 @@ dependencies {
 	compile group: 'org.springframework', name: 'spring-tx', version: '3.1.1.RELEASE'
 	
 	//Formate Json
-	compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.9.3'
+	compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-yaml', version: '2.5.3'
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.6'
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.6'
+	
 	 
 	// Spring Security
-	compile group: 'org.springframework.security', name: 'mybatis-spring', version: springSecurityVersion
-	compile group: 'org.springframework.security', name: 'spring-security-config', version: springSecurityVersion
-	compile group: 'org.springframework.security', name: 'spring-security-taglibs', version: springSecurityVersion
 	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '3.0.2.RELEASE'
-	compile group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version: '2.0.9.RELEASE'
-		
+	
 
 }
 

@@ -1,6 +1,8 @@
 package com.mcnc.web.controller.rest;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,7 @@ public class UsersRestController {
 	@Autowired
 	private UserServiceImp userServiceImp;
 	
+
 	@RequestMapping(value={"/listUser"},method= RequestMethod.GET)
 	@ResponseBody
 	public Map<String, Object> edit(){
@@ -38,6 +41,7 @@ public class UsersRestController {
 		}
 		return data;
 	}
+
 
 	@RequestMapping(value= {"/getUserByID"},method = RequestMethod.GET)
 	public ResponseEntity<UserDTO> getUserByID(@RequestParam String id){
