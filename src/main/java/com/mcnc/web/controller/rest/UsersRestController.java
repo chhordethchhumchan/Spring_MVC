@@ -1,9 +1,8 @@
 package com.mcnc.web.controller.rest;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,8 +29,8 @@ public class UsersRestController {
 
 	@RequestMapping(value={"/listUser"},method= RequestMethod.GET)
 	@ResponseBody
-	public Map<String, Object> edit(){
-		Map<String, Object> data = new HashMap<String, Object>();
+	public Map<String, Object> listUser(){
+		Map<String, Object> data = new ConcurrentHashMap<String, Object>();
 		try {
 			data.put("data",userServiceImp.findAllUser());
 		}catch (Exception e) {
@@ -41,6 +40,15 @@ public class UsersRestController {
 		}
 		return data;
 	}
+
+	@RequestMapping(value={"/userlist"},method= RequestMethod.GET)
+	@ResponseBody
+	public List<UserDTO> user(){
+		List<UserDTO> users = userServiceImp.findAllUser();
+		
+		return users;
+	}
+
 
 
 	@RequestMapping(value= {"/getUserByID"},method = RequestMethod.GET)

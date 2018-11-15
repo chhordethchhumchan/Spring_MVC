@@ -9,10 +9,10 @@
         <result column="name" property="name" jdbcType="VARCHAR" />
     </resultMap>
 
-    <select id="findAllUser" resultMap="baseResultMap">
+    <select id="findAllUser" resultMap="baseResultMap" flushCache="true">
         select id,name from users
     </select>  
-    <select id="findUserByID" resultMap="baseResultMap">
+    <select id="findUserByID" resultMap="baseResultMap" flushCache="true" >
         select id,name from users
         <where>
         	id = #{id}

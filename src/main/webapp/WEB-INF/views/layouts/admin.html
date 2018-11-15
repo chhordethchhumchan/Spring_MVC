@@ -11,35 +11,38 @@
 <header th:replace="blocks/header :: header"></header>
  <aside class="main-sidebar" th:replace="blocks/main-sidebar :: main-sidebar">
   </aside>
-   <!-- Content Wrapper. Contains page content -->
+ 
+  
+  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-      
-        <th:block layout:fragment="breadcrumb-header">
-          Page Header
-           <small>Optional description</small>
-          </th:block>
-       
+        Page Header
+        <small>Optional description</small>
       </h1>
       <ol class="breadcrumb">
-     
-         <th:block layout:fragment="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-      		  <li class="active">Here</li>
-          </th:block>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
       </ol>
     </section>
 
-      <div class="content">
-        <div layout:fragment="page_content"></div>
-      </div>
- 
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+        
+  	<div layout:fragment="page_content"></div>
+        
+        
+
+    </section>
     <!-- /.content -->
-    </div>
-    <div th:replace="blocks/footer :: footer" ></div>
-    <div th:replace="blocks/js :: js"></div>
+  </div>
+  <!-- /.content-wrapper -->
+  
+  
+   <div th:replace="blocks/footer :: footer" ></div>
+   <div th:replace="blocks/js :: js"></div>
   
 </body>
 </html>

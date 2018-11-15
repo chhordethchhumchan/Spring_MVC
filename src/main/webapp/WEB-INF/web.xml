@@ -11,9 +11,7 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>	
-			/WEB-INF/conf/spring_mysql.xml,
-	
-			
+			/WEB-INF/conf/spring_mybatis.xml
 		</param-value>
 	</context-param>
 	 

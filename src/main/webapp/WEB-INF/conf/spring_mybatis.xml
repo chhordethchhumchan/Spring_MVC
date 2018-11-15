@@ -1,28 +1,51 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xmlns:tx="http://www.springframework.org/schema/tx"
-    xmlns:context="http://www.springframework.org/schema/context"
-    xmlns:aop="http://www.springframework.org/schema/aop" 
-    xmlns:util="http://www.springframework.org/schema/util"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans 
-    http://www.springframework.org/schema/beans/spring-beans.xsd 
-  ">
-	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource"/>
-	</bean>
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
+		
+<!-- 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"> -->
+<!-- 		<property name="dataSource" ref="dataSource"/> -->
+<!-- 	</bean> -->
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+       <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+       <property name="url" value="jdbc:mysql://localhost:3306/mcnc_ojt" />
+       <property name="username" value="root" />
+       <property name="password" value="" />
+    </bean>
 		 
-	<!--  SQL Session factory for mybatis -->
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="typeAliasesPackage" value="com.mcnc.web"/>
-		<property name="mapperLocations" value="classpath*:mappers/**/**.xml"/>
+	<bean id="transactionManager" 
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+		p:dataSource-ref="dataSource" />
+	
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	  <property name="basePackage" value="com.mcnc.web.dao" />
 	</bean>
+	
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	  <property name="dataSource" ref="dataSource" />
+	  <property name="typeAliasesPackage" value="com.mcnc.web.dto"/>
+	  <property name="mapperLocations" value="classpath*:mappers/*.xml" />
+	</bean>
+	
+	<!--  SQL Session factory for mybatis -->
+<!-- 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"> -->
+<!-- 		<property name="typeAliasesPackage" value="com.mcnc.web"/> -->
+<!-- 		<property name="mapperLocations" value="classpath*:mappers/**/**.xml"/> -->
+<!-- 	</bean> -->
 	 
 	 
 	<!--  mapper class configuration -->
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.mcnc.web.mapper"/>
-		<property name="annotationClass" value="org.springframework.stereotype.Repository"/>
-	</bean>
+<!-- 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"> -->
+<!-- 		<property name="basePackage" value="com.mcnc.web.mapper"/> -->
+<!-- 		<property name="annotationClass" value="org.springframework.stereotype.Repository"/> -->
+<!-- 	</bean> -->
 	
+	<tx:annotation-driven/>
 
 </beans>
