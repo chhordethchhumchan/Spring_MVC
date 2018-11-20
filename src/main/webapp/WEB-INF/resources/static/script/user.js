@@ -155,38 +155,7 @@
     	    }); 
     	   
     		
-    		  $('#save').click(function(e) {
-    			   e.preventDefault();
-    			   	var id =  $("#id").val();
-    			   	var name =  $("#name").val();
-    			   	
-    			   	var user = {
-    			           id: id,
-    			           name: name,
-    			     }
-    			   	// Draw Item into dataTable
-    			   /*	table = $("#dataTable").DataTable();
-    			   	table.row.add( user ).draw()*/
-    			   			
-    				   var data = JSON.stringify(user);
-    			   	  if(id.lenght==0|| id==""||name.lenght==0||name==""){
-    			   		  alert("Can't null");
-    			   	  }else{
-	    				   $.ajax({
-	    				          data: data,
-	    				          type: "post",
-	    				          url: "/spring-mvc-mcnc/api/user/save",
-	    				          async: false,
-	    				          contentType: "application/json",
-	    				          dataType: "json",
-	    				          success: function(data){
-	    				        	  alert("Data insert succes!")
-	    				        	  location.reload();
-	    				          },
-	    				 });
-    				   
-    			   	  }
-    		   });   
+    		
     				   
     			  
      }); 

@@ -15,7 +15,9 @@ public interface UserService {
 	
 	int saveXUser(UserDTO userDTO);
 	
-	int deleteXUser(UserDTO userDTO);
+	int deleteXUser(String id);
+	
+	void deleteXUsers(List<String> id);
 		
 	public boolean isUserExist(UserDTO userDTO);
 	

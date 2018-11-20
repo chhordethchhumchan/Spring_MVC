@@ -21,11 +21,27 @@
 	   </mvc:message-converters>
 	</mvc:annotation-driven>
 	<!-- for production: cache-period="86400" -->
+	
+<!-- 	<mvc:annotation-driven validator="validator">
+		<mvc:argument-resolvers>
+			<bean class="maru.admin.common.web.resolver.JsonFieldArgumentResolver">
+				<constructor-arg name="objectMapper" ref="objectMapper" />
+			</bean>
+			<bean class="org.springframework.security.web.method.annotation.AuthenticationPrincipalArgumentResolver" />
+		</mvc:argument-resolvers>
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				<property name="objectMapper" ref="objectMapper" />
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven> -->
+	
 	<mvc:resources 
 		mapping="/**" 
 		location="
 			/WEB-INF/resources/**/,
 			/WEB-INF/resources/static/,
+			/WEB-INF/resources/static/script/,
 			/WEB-INF/views/,
 			/WEB-INF/views/**/,
 			/WEB-INF/views/layouts" />

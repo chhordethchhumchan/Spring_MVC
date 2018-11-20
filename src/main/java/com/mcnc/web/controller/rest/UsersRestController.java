@@ -1,13 +1,16 @@
 package com.mcnc.web.controller.rest;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -102,17 +105,37 @@ public class UsersRestController {
   //------------------- Delete a User --------------------------------------------------------
       
       @RequestMapping(value = "/delete", method = RequestMethod.POST)
-      public ResponseEntity<UserDTO> deleteUser(@RequestBody UserDTO userDTO) {
-        
+      public ResponseEntity<String> deleteUser(@RequestParam String id) {
+                  
+          if (id == null) {
           
-          if (userDTO == null) {
-          
-          	return new ResponseEntity<UserDTO>(HttpStatus.NOT_FOUND);
+          	return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
           }
           
-          userServiceImp.deleteXUser(userDTO);
+          userServiceImp.deleteXUser(id);
 
-          return new ResponseEntity<UserDTO>(userDTO, HttpStatus.NO_CONTENT);
+          return new ResponseEntity<String>( HttpStatus.NO_CONTENT);
       }
+      
+      @RequestMapping(value = "/delete_lists", method = RequestMethod.POST)
+      public ResponseEntity<String> deleteUsers( @RequestBody List<String> id) {
+                  
+    	  if (id == null) {
+              
+            	return new ResponseEntity<String>(HttpStatus.NOT_FOUND);
+            }
+            
+          userServiceImp.deleteXUsers(id);
+
+          return new ResponseEntity<String>("Done",HttpStatus.NO_CONTENT);
+
+        
+      }
+      
+  	@PostMapping("/delete_list")
+  	public ResponseEntity<String> deleteLinkParameterList( @RequestBody  List<String> id) {
+  		 userServiceImp.deleteXUsers(id);		
+  	    return new ResponseEntity<String>(HttpStatus.NO_CONTENT);
+  	}
   	
 }

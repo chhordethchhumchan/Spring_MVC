@@ -3,6 +3,10 @@ package com.mcnc.web.dto;
 import java.io.Serializable;
 
 public class UserDTO implements Serializable  {
+	
+	public UserDTO() {
+		
+	}
 	private String id;
 	private String name;
 	

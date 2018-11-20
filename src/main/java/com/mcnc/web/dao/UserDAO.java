@@ -17,7 +17,9 @@ public interface UserDAO {
   
   int save(UserDTO user);
   
-  int delete(UserDTO user);
+  int deletes(List<String> id);
+  
+  int delete(String id);
 	
   boolean isUserExist(UserDTO user);
 }

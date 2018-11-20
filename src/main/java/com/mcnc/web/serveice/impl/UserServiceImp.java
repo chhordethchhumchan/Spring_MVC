@@ -51,9 +51,16 @@ public class UserServiceImp implements UserService {
 	}
 
 	@Override
-	public int deleteXUser(UserDTO userDTO) {
+	public int deleteXUser(String id) {
 		// TODO Auto-generated method stub
-		return userDAO.delete(userDTO);
+		return userDAO.delete(id);
+	}
+	
+	@Override
+	public void deleteXUsers(List<String> id) {
+		
+		  userDAO.deletes(id);
+		
 	}
 
 	

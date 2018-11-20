@@ -12,7 +12,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
         <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    
 
         <div class="col-sm-12">
             <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">New</button>
@@ -70,6 +70,7 @@
                             </tr>
                         </thead>
                     </table>
+                    <button type="button" class="btn btn-default " id="btnDelete">Delete</button>
                 </div>
 
             </div>
@@ -113,36 +114,10 @@
 
                 </div>
             </div>
-      
-        <script type="text/javascript" src="script/useradd.js"></script>
-        <script>
-        
-        $('#updateUser').click(function(e) {
-           
-             e.preventDefault();
-                      var user = {
-                      id: $("#editUser #id").val(),
-                      name:$("#editUser #name").val(),
-                   
-                  }
-                      var id =  $("#editUser #id").val();
-                  var data = JSON.stringify(user);
-                  $.ajax({
-                         data: data,
-                         type: "post",
-                         url: "/spring-mvc-mcnc/api/user/user/"+id+"",
-                         async: false,
-                         contentType: "application/json",
-                         dataType: "json",
-                         success: function(data){
-                              alert("Update Sucess");                          
-                        	 location.reload();
-                                
-                       }
-                });
-        });
-        </script>
-
+     
+        <script type="text/javascript" th:src="@{script/useradd.js}"></script>
+     
+		
     </div>
 </body>
 </html>
